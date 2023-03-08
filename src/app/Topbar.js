@@ -11,27 +11,34 @@ export default function TopBar(){
     let layoutGrid = {
         display: "grid",
         gridTemplateRows: "1fr 1fr 1fr",
-        marginBottom: "80px"
+        marginBottom: "80px",
+        gridArea: "overlay"
     }
 
     let circleStyle = {
-        position: "absolute",
         backgroundColor: "#717171",
-        left: "46%",
-        top: "1%",
         width: "115px",
         height: "115px",
-        borderRadius: "50%"
+        borderRadius: "50%",
+        gridArea: "overlay",
+        justifySelf: "center"
+    }
+
+    let overlayGrid = {
+        display: "grid",
+        gridTemplateAreas: '"overlay"',
+        // justifyItems: "center"
     }
 
     return(
-        <div>
-            <div style={circleStyle}></div>
+        <div style={overlayGrid}>
             <div style={layoutGrid}>
                 <div style={lineStyle}></div>
                 <div style={lineStyle}></div>
                 <div style={lineStyle}></div>
             </div>
+
+            <div style={circleStyle}></div>
         </div>
     )
 }

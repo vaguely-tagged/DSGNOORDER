@@ -1,4 +1,6 @@
+'use client'
 import TopBar from "./Topbar"
+import { useRouter } from "next/navigation";
 
 //styles
 let gridStyle = {
@@ -18,8 +20,15 @@ let imageSize = {
   backgroundColor: "black"
 }
 
-
 export default function Home() {
+
+  const router = useRouter();
+
+  const menuRoute = e => {
+    router.push("/menu")
+  }
+
+
   return (
     <div>
       <TopBar></TopBar>
@@ -27,7 +36,7 @@ export default function Home() {
       <div style={gridStyle}>
 
         <div style={{width: "70%"}}>
-          <button style={itemMarginStyle} className="button is-large is-fullwidth is-rounded is-link">Menu</button>
+          <button style={itemMarginStyle} className="button is-large is-fullwidth is-rounded is-link" onClick={menuRoute}>Menu</button>
           <button style={itemMarginStyle} className="button is-large is-fullwidth is-rounded is-link">Preferences</button>
           <button style={itemMarginStyle} className="button is-large is-fullwidth is-rounded is-link">Search</button>
           <button className="button is-large is-fullwidth is-rounded is-link">Fav's</button>
