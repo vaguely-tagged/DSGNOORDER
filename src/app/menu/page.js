@@ -93,13 +93,13 @@ export default function Menu() {
             <TopBar></TopBar>
 
             <div style={gridStyle}>
-                <div>
-                    <div style={drinkStyle} onClick={handleDrink}>Drinks</div>
-                    <Drinks visible={drink} />
-                </div>
+   
+                <div style={drinkStyle} onClick={handleDrink}>Drinks</div>
                 <div style={snackStyle} onClick={handleSnack}>Snacks</div>
                 <div style={addOnStyle} onClick={handleAddOn}>Add ons</div>
             </div>
+            
+            <Drinks visible={drink} />
 
         </div>
     )
